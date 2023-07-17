@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-  />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="shortcut icon" type="image/png" href="icon.png" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
   <title>Brasil Investimentos</title>
   <style>
     * {
@@ -19,17 +13,17 @@
       margin: 0;
       padding: 0;
     }
-
+    
     html {
       font-size: 62.5%;
     }
-
+    
     body {
       font-family: "Poppins", sans-serif;
       background-color: #f2f2f2;
       color: #333;
     }
-
+    
     nav {
       display: flex;
       justify-content: center;
@@ -38,41 +32,41 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
     }
-
+    
     .welcome {
       font-size: 2rem;
       font-weight: 600;
       margin-right: auto;
     }
-
+    
     .logo {
       width: 4rem;
       height: 4rem;
       margin-right: 1rem;
       cursor: pointer;
     }
-
+    
     .login {
       display: flex;
       flex-direction: column;
       margin-top: 2rem;
     }
-
+    
     .login__input {
       padding: 1rem;
       margin-bottom: 1rem;
       border: none;
       border-radius: 5px;
     }
-
+    
     .login__input--user {
       background-color: #eee;
     }
-
+    
     .login__input--pin {
       background-color: #f2f2f2;
     }
-
+    
     .login__btn {
       padding: 1rem;
       background-color: #333;
@@ -81,7 +75,7 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
+    
     .main_preloader {
       display: flex;
       flex-direction: column;
@@ -90,7 +84,7 @@
       height: 100vh;
       background-color: #f2f2f2;
     }
-
+    
     .preloader {
       display: flex;
       justify-content: center;
@@ -101,155 +95,59 @@
       background-color: #333;
       border-radius: 10px;
     }
-
+    
     .preloader__square {
       width: 1rem;
       height: 1rem;
       background-color: #fff;
       margin-right: 0.5rem;
     }
-
+    
     .status {
       font-size: 1.4rem;
       font-weight: 500;
     }
-
+    
     .status__dot {
       animation: blink 1s infinite;
     }
-
+    
     @keyframes blink {
       0% {
-        opacity: 1;
-      }
-
-      50% {
         opacity: 0;
       }
-
-      100% {
+    
+      50% {
         opacity: 1;
       }
+    
+      100% {
+        opacity: 0;
+      }
     }
-
-    .app {
-      padding: 2rem;
-    }
-
-    .balance {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.8rem;
-      margin-bottom: 2rem;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .balance__label {
-      font-size: 1.6rem;
-      font-weight: 600;
-    }
-
-    .balance__date {
-      font-size: 1.2rem;
-      color: #999;
-    }
-
-    .balance__value {
-      font-size: 3.6rem;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .movements {
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .movements__row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.8rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .movements__type {
-      padding: 0.8rem;
-      border-radius: 5px;
-      font-size: 1.4rem;
-    }
-
-    .movements__date {
-      font-size: 1.4rem;
-      color: #999;
-    }
-
-    .movements__value {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .summary {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .summary__label {
-      font-size: 1.4rem;
-      font-weight: 500;
-    }
-
-    .summary__value {
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .summary__value--in {
-      color: #4caf50;
-    }
-
-    .summary__value--out {
-      color: #f44336;
-    }
-
-    .summary__value--interest {
-      color: #2196f3;
-    }
-
-    .btn--sort {
-      padding: 1rem;
-      margin-top: 1rem;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .operation {
-      display: none;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
   </style>
+<script>
+  // Seu script JS aqui
+</script>
 </head>
 <body>
-  <!-- conteúdo HTML -->
+  <nav>
+    <span class="welcome">Bem-vindo</span>
+    <img class="logo" src="logo.png" alt="Logo">
+  </nav>
+  <div class="login">
+    <input class="login__input login__input--user" type="text" placeholder="Usuário">
+    <input class="login__input login__input--pin" type="password" placeholder="PIN">
+    <button class="login__btn">Acessar</button>
+  </div>
+  <div class="main_preloader">
+    <div class="preloader">
+      <div class="preloader__square"></div>
+      <div class="preloader__square"></div>
+      <div class="preloader__square"></div>
+    </div>
+    <span class="status">Carregando<span class="status__dot">.</span><span class="status__dot">.</span><span class="status__dot">.</span></span>
+  </div>
 </body>
 </html>
+```
